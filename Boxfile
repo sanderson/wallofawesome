@@ -1,0 +1,8 @@
+web1:
+  name: blog
+  shared_writable_dirs: 
+    - /wp-content/uploads/
+  upload_max_filesize: 20M
+  
+db1:
+  type: mysql
