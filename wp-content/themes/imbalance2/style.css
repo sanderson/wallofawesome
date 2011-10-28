@@ -39,10 +39,10 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .menu ul li { padding-bottom: 9px; }
 .menu ul a { line-height: 13px; color: #303030; text-decoration: none; }
 #boxes { margin-top: 40px; }
-.box { width: 280px; margin-bottom: 70px; color: #636363; }
+.box { width: 210px; margin-bottom: 70px; color: #636363; }
 .box .rel { position: relative; }
 .box .rel p { margin: 0; }
-.box .texts { position: absolute; top: -20px; left: -20px; width: 280px; color: #fff; z-index: 200; opacity: 0; filter: alpha(opacity=0); }
+.box .texts { position: absolute; top: -20px; left: -20px; width: 210px; color: #fff; z-index: 200; opacity: 0; filter: alpha(opacity=0); }
 .box .texts .categories a, .box .texts a, .box .texts .posted, .box .texts .posted a { color: #fff; }
 .box .texts .transparent img { opacity: 0.1; filter: alpha(opacity=10); }
 .box .texts .abs { position: absolute; top: 0; }
