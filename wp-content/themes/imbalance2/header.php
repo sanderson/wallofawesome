@@ -79,14 +79,14 @@ $(document).ready(function() {
 	// grid
 	$('#boxes').masonry({
 		itemSelector: '.box',
-		columnWidth: 210,
-		gutterWidth: 40
+		columnWidth: 280,
+		gutterWidth: 30
 	});
 
 	$('#related').masonry({
 		itemSelector: '.box',
-		columnWidth: 210,
-		gutterWidth: 40
+		columnWidth: 280,
+		gutterWidth: 30
 	});
 	
 	$('.texts').live({
