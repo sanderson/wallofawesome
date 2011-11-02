@@ -16,16 +16,35 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wallofawesome');
+if (isset($_SERVER['ENVIRONMENT']) && $_SERVER['ENVIRONMENT'] == 'PAGODABOX') {
 
-/** MySQL database username */
-define('DB_USER', 'root');
+	define('DB_NAME', $_SERVER['DB1_NAME']);
 
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
+	/** MySQL database username */
+	define('DB_USER', $_SERVER['DB1_USER']);
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL database password */
+	define('DB_PASSWORD', $_SERVER['DB1_PASS']);
+
+	/** MySQL hostname */
+	define ('DB_HOST', $_SERVER['DB1_PATH']);
+
+}
+
+else {
+	
+	define('DB_NAME', 'wallofawesome');
+
+	/** MySQL database username */
+	define('DB_USER', 'root');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'root');
+
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+	
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
