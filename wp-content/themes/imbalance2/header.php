@@ -209,7 +209,9 @@ $(document).ready(function() {
 		</div>
 		<div id="header-left"><?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-left', 'walker' => new Imbalance2_Walker_Nav_Menu(), 'depth' => 1 ) ); ?></div>
 		<div id="header-center"><?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-center', 'walker' => new Imbalance2_Walker_Nav_Menu(), 'depth' => 1 ) ); ?></div>
-		<a href="mailto:awesome@pagodabox.com?subject=I think this is awesome&body=Include your name, the link, and why you think it's awesome." class="submit-awesome">Submit Some Awesomeness</a>
+		<script type="text/javascript">document.write(
+"<n uers=\"znvygb:njrfbzr\100cntbqnobk\056pbz?fhowrpg=V guvax guvf vf njrfbzr&obql=Vapyhqr lbhe anzr, gur yvax naq jul lbh guvax vg'f njrfbzr\056\" pynff=\"fhozvg-njrfbzr\">Fhozvg Fbzr Njrfbzrarff<\057n>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+</script>
 		<a href="<?php echo home_url( '/' ); ?>" class="awesome"></a>
 		<div id="search">
 			<?php get_search_form(); ?>
