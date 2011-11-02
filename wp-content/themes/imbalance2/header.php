@@ -205,11 +205,12 @@ $(document).ready(function() {
 <div class="wrapper">
 	<div id="header">
 		<div id="site-title">
-			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+			<a href="http://www.pagodabox.com/"></a>
 		</div>
 		<div id="header-left"><?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-left', 'walker' => new Imbalance2_Walker_Nav_Menu(), 'depth' => 1 ) ); ?></div>
 		<div id="header-center"><?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-center', 'walker' => new Imbalance2_Walker_Nav_Menu(), 'depth' => 1 ) ); ?></div>
-		<div class="submit-awesome">Submit Some Awesomeness</div>
+		<a href="mailto:awesome@pagodabox.com?subject=I think this is awesome&body=Include your name, the link, and why you think it's awesome." class="submit-awesome">Submit Some Awesomeness</a>
+		<a href="<?php echo home_url( '/' ); ?>" class="awesome"></a>
 		<div id="search">
 			<?php get_search_form(); ?>
 			<div id="header-right"><?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-right', 'walker' => new Imbalance2_Walker_Nav_Menu(), 'depth' => 1 ) ); ?></div>

@@ -10,9 +10,9 @@ License URI: license.txt
 Tags: fluid, grid, blog, magazine, imbalance
 */
 
-html, body, form, ul, li, table, td { margin: 0; padding: 0; font-family:"ff-meta-web-pro-1","ff-meta-web-pro-2",arial,sans; }
-body { position: relative; color: #333; }
-body, input, textarea { font-size: 13px; font-family:"ff-meta-web-pro-1","ff-meta-web-pro-2",arial,sans;}
+html, body, form, ul, li, table, td { margin: 0; padding: 0; font-family:"ff-meta-web-pro-1","ff-meta-web-pro-2",arial,sans !important; }
+body { position: relative; color: #494949; }
+body, input, textarea { font-size: 13px;}
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 a img { border: 0; }
@@ -31,7 +31,8 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 #header-left { position:absolute; bottom:10px; left:0px; }
 #header-center { float: left; width: 210px; padding-right: 30px; }
 .submit-awesome {margin:0; padding:0 12px; cursor:pointer; height:25px; color:#707070; font-size:12px; line-height:25px; position:absolute; top:20px; right:0; -moz-border-radius:5px; border-radius:5px; background-image: linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -o-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -moz-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -webkit-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -ms-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%);}
-.submit-awesome:hover {color:#fff; background-image: linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -o-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -moz-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -webkit-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -ms-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%);}
+.submit-awesome:hover {color:#fff; text-decoration:none; background-image: linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -o-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -moz-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -webkit-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -ms-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%);}
+.awesome {width:594px; height:52px; display:block; position:absolute; top:123px; right:488px;}
 #search { position:absolute; bottom:10px; right:0; width: 220px; }
 #header-right { margin: 20px 0 0 10px; display:none; }
 #search label, #search input[type=submit] { display: none; }
@@ -52,12 +53,13 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .box .texts:hover .posted a span{background-position:-86px 0;}
 .box .texts:hover .posted a:hover span {background-position:-113px 0; color:#fff;}
 .box .categories { padding-bottom: 10px; }
+.box .categories a {text-transform:uppercase; font-size:12px; color:#7d7d7d;}
 .box .categories a, .box .posted a { color: #a1a1a1; }
-.box h1 { margin: 0; padding-bottom: 10px; font-size: 16px; }
+.box h1 { margin: 0; padding-bottom: 10px; font-size: 30px; color:#424242; font-family:museo; }
 .box h1 a { color: #333; }
 .box .posted { padding-top: 20px; color: #a1a1a1; position:relative; }
-.box .posted a {padding:0 20px 0 10px; background:#fff; font-size:13px; line-height:30px; position:absolute; top:12px; right:-20px;}
-.box .posted a span	{margin:0 0 0 5px; padding:0; width:27px; height:22px; line-height:18px; text-align:center; display:inline-block; background:url('images/sprite.png') -140px 0 no-repeat;}
+.box .posted a {padding:0 20px 0; height:32px; background:#fff; font-size:13px; line-height:34px; position:absolute; top:12px; right:-20px;}
+.box .posted a span	{margin:0 0 0 5px; padding:0; width:27px; height:22px; line-height:21px; text-align:center; display:inline-block; background:url('images/sprite.png') -140px 0 no-repeat;}
 .box img { display: block; }
 .fetch { clear: both; width: 460px; margin: 0 auto 40px; background: #f9f9f9; -moz-border-radius: 4px; border-radius: 4px; text-align: center; }
 .fetch a { display: block; height: 40px; line-height: 40px; font-size: 16px; font-weight: bold; color: #333; text-decoration: none; }
@@ -68,8 +70,8 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .nav-previous, .nav-next { display: inline; }
 .nav-separator { color: #e5e5e5; }
 .post_title { margin-top: 35px; overflow: hidden; }
-.post_title h1 { margin: 0 0 10px 250px; font-size: 27px; line-height: 35px; width: 710px; }
-.entry-title, .page-title { margin-left: 250px; margin-top: 35px; }
+.post_title h1 { margin: 0 0 10px 250px; font-size: 27px; line-height: 35px; width: 710px; font-family:museo; color:#424242; }
+.entry-title, .page-title { margin-left:0; margin-top: 35px; font-family:museo; font-size:24px; color:#666;}
 .entry-meta { padding-bottom: 30px; color: #636363; }
 .entry-meta a { color: #333; text-decoration: none; }
 #wides { clear: both; }
@@ -86,7 +88,7 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .post .alignright, .page .alignright { float: right; margin-left: 20px; }
 .post .aligncenter, .page .aligncenter { display: block; clear: both; margin: 20px auto; }
 #comments { padding: 0 0 0 246px; width: 714px; }
-#comments-title { font-size: 21px; margin: 40px 0 20px 4px; }
+#comments-title { font-size: 21px; margin: 40px 0 20px 4px; color:#424242;}
 .commentlist { margin: 0; padding: 0; list-style: none; }
 .commentlist ul.children { list-style: none; }
 .commentlist li > div { position: relative; border-bottom: 1px solid #dedfe0; padding: 30px 0 30px 4px; }
@@ -103,7 +105,7 @@ cite { font-style: normal; font-weight: bold; }
 #respond { padding-left: 4px; }
 li.comment > div { position: relative; }
 .reply { position: absolute; top: 30px; right: 20px; }
-#reply-title { font-size: 21px; }
+#reply-title { font-size: 21px; color:#424242;}
 .comment-reply-link { display: none; }
 .comment-form-author, .comment-form-email, .comment-form-url { float: left; width: 460px; margin: 0; padding: 10px 0; }
 .comment-form-comment { clear: both; width: 460px; margin: 0; padding: 10px 0; }
