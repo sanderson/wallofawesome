@@ -34,10 +34,10 @@ blockquote { border-color: <?php echo $color ?>; }
 <?php if (!fluidGrid()): ?>
 .wrapper { width: 960px; margin: 0 auto; }
 <?php else: ?>
-.wrapper { margin: 0 40px; }
+.wrapper { margin: 0 auto; }
 <?php endif ?>
 
-.box .texts { border: 20px solid <?php echo $color ?>; background: <?php echo $color ?>;  }
+.box .texts { border: 15px solid <?php echo $color ?>; background: <?php echo $color ?>;  }
 <?php if (!imagesOnly()): ?>
 .box .categories { padding-top: 15px; }
 <?php endif ?>
@@ -52,9 +52,9 @@ $(document).ready(function() {
 	// fluid grid
 	<?php if (fluidGrid()): ?>
 	function wrapperWidth() {
-		var wrapper_width = $('body').width() - 20;
-		wrapper_width = Math.floor(wrapper_width / 250) * 250 - 40;
-		if (wrapper_width < 1000) wrapper_width = 1000;
+		var wrapper_width = $('body').width() - 20 ;
+		wrapper_width = Math.floor(wrapper_width / 310) * 310 + 20;
+		if (wrapper_width < 960) wrapper_width = 960;
 		$('.wrapper').css('width', wrapper_width);
 	}
 	wrapperWidth();
@@ -81,14 +81,14 @@ $(document).ready(function() {
 	// grid
 	$('#boxes').masonry({
 		itemSelector: '.box',
-		columnWidth: 210,
-		gutterWidth: 40
+		columnWidth: 280,
+		gutterWidth: 30
 	});
 
 	$('#related').masonry({
 		itemSelector: '.box',
-		columnWidth: 210,
-		gutterWidth: 40
+		columnWidth: 280,
+		gutterWidth: 30
 	});
 	
 	$('.texts').live({
