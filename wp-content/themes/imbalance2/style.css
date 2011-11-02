@@ -10,7 +10,7 @@ License URI: license.txt
 Tags: fluid, grid, blog, magazine, imbalance
 */
 
-html, body, form, ul, li, table, td { margin: 0; padding: 0; font-family:"ff-meta-web-pro-1","ff-meta-web-pro-2",arial,sans !important; }
+html, body, form, ul, li, table, td { margin: 0; padding: 0; font-family:"ff-meta-web-pro","ff-meta-web-pro",arial,sans !important; }
 body { position: relative; color: #494949; }
 body, input, textarea { font-size: 13px;}
 a { text-decoration: none; }
