@@ -20,8 +20,8 @@
 			<div class="categories"><?php imbalance2_posted_in(); ?></div>
 			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		<?php the_excerpt() ?>
-			<div class="posted"><?php imbalance2_posted_on() ?> <span class="main_separator">/</span>
-				<?php echo comments_popup_link( __( 'No comments', 'imbalance2' ), __( 'One Comment', 'imbalance2' ), __( '% Comments', 'imbalance2' ) ); ?>
+			<div class="posted"><?php imbalance2_posted_on() ?> <!-- <span class="main_separator">/</span> -->
+				<?php echo comments_popup_link( __( 'No comments', 'imbalance2' ), __( 'Add a Comment', 'imbalance2' ), __( '% Add a Comment', 'imbalance2' ) ); ?>
 			</div>
 	<?php endif ?>
 			<div class="texts">
@@ -35,8 +35,8 @@
 					<div class="categories"><?php imbalance2_posted_in(); ?></div>
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		<?php the_excerpt() ?>
-					<div class="posted"><?php imbalance2_posted_on() ?> <span class="main_separator">/</span>
-					<?php echo comments_popup_link( __( 'No comments', 'imbalance2' ), __( 'One Comment', 'imbalance2' ), __( '% Comments', 'imbalance2' ) ); ?>
+					<div class="posted"><?php imbalance2_posted_on() ?> <!-- <span class="main_separator">/</span> -->
+					<?php echo comments_popup_link( __( 'No comments', 'imbalance2' ), __( 'Add a Comment', 'imbalance2' ), __( '% Add a Comment', 'imbalance2' ) ); ?>
 					</div>
 				</div>
 			</div>
