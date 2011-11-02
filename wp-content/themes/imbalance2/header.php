@@ -13,7 +13,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<script type="text/javascript" src="https://use.typekit.com/hai1jyh.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/zad2clw.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <?php
 	if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
