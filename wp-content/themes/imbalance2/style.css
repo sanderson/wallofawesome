@@ -27,9 +27,11 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .wrapper {  }
 #header { border-bottom: 1px solid #dedfe0; height:315px; background:url('images/header-back.png') top center no-repeat; position:relative; }
 #site-title {margin:20px 0 0; float:left; width:86px; height:31px; }
-#site-title a {width:86px; height:31px; display:block; background:url('images/sprite.png') -594px 0 no-repeat; text-indent:-9999em;}
+#site-title a {width:86px; height:31px; display:block; background:url('images/sprite.png') 0 0 no-repeat; text-indent:-9999em;}
 #header-left { position:absolute; bottom:10px; left:0px; }
 #header-center { float: left; width: 210px; padding-right: 30px; }
+.submit-awesome {margin:0; padding:0 12px; cursor:pointer; height:25px; color:#707070; font-size:12px; line-height:25px; position:absolute; top:20px; right:0; -moz-border-radius:5px; border-radius:5px; background-image: linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -o-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -moz-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -webkit-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -ms-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%);}
+.submit-awesome:hover {color:#fff; background-image: linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -o-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -moz-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -webkit-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -ms-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%);}
 #search { position:absolute; bottom:10px; right:0; width: 220px; }
 #header-right { margin: 20px 0 0 10px; display:none; }
 #search label, #search input[type=submit] { display: none; }
@@ -46,13 +48,16 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .box .texts .categories a, .box .texts a, .box .texts .posted, .box .texts .posted a { color: #fff; }
 .box .texts .transparent img { opacity: 0.1; filter: alpha(opacity=10); }
 .box .texts .abs { position: absolute; top: 0; }
-.box .texts:hover .posted a {color:#ed1d56;}
+.box .texts:hover .posted a {text-decoration:none; color:#ed1d56;}
+.box .texts:hover .posted a span{background-position:-86px 0;}
+.box .texts:hover .posted a:hover span {background-position:-113px 0; color:#fff;}
 .box .categories { padding-bottom: 10px; }
 .box .categories a, .box .posted a { color: #a1a1a1; }
 .box h1 { margin: 0; padding-bottom: 10px; font-size: 16px; }
 .box h1 a { color: #333; }
 .box .posted { padding-top: 20px; color: #a1a1a1; position:relative; }
-.box .posted a {padding:0 20px 0 0; background:#fff; font-size:13px; line-height:30px; position:absolute; top:12px; right:-20px;}
+.box .posted a {padding:0 20px 0 10px; background:#fff; font-size:13px; line-height:30px; position:absolute; top:12px; right:-20px;}
+.box .posted a span	{margin:0 0 0 5px; padding:0; width:27px; height:22px; line-height:18px; text-align:center; display:inline-block; background:url('images/sprite.png') -140px 0 no-repeat;}
 .box img { display: block; }
 .fetch { clear: both; width: 460px; margin: 0 auto 40px; background: #f9f9f9; -moz-border-radius: 4px; border-radius: 4px; text-align: center; }
 .fetch a { display: block; height: 40px; line-height: 40px; font-size: 16px; font-weight: bold; color: #333; text-decoration: none; }
