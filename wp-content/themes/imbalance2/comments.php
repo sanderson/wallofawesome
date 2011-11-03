@@ -41,4 +41,10 @@
 
 <?php comment_form(array('comment_notes_after' => '', 'comment_notes_before' => '')); ?>
 
+<div class="subscribe-divide"></div>
+<div class="subscribe">
+	<?php show_manual_subscription_form(); ?>
+</div>
+
+
 </div><!-- #comments -->

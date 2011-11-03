@@ -124,8 +124,14 @@ input[type="text"], textarea { background: #fff; border: 1px solid #ccc; padding
 
 
 /* Subscribe to Comments */
-#subscription								{width: 600px !important; padding: 50px 0; margin:0 auto}
-#subscription h2						{font-family: Museo; font-size: 24px; color:#424242}
-fieldset										{border: none; padding:5px 0;}
-fieldset legend							{font-size: 16px; font-weight: bold;}
-#subscription .options						{margin-top: 35px;}
+#subscription										{width: 600px !important; padding: 50px 0; margin:0 auto}
+#subscription h2								{font-family: Museo; font-size: 24px; color:#424242}
+fieldset												{border: none; padding:5px 0;}
+fieldset legend									{font-size: 16px; font-weight: bold; padding: 20px 0 0 0;}
+#subscription .options					{margin-top: 35px;}
+.subscribe											{padding: 0 0 0 4px; width:400px}
+.subscribe-divide								{padding: 8px 0;width: 470px; border-top: 1px solid #DEDFE0;}
+.subscribe input[type="text"]		{ width: 335px !important;}
+.subscribe input[type="submit"]	{ width: 100px; padding: 8px 0; color: #fff; font-size: 13px; font-weight: bold; cursor: pointer; border: 0; text-align: center; -moz-border-radius: 4px; border-radius: 4px; }
+.subscribe input[type="submit"]:hover {background-color: #ff0052;}
+.solo-subscribe-to-comments 		{width:470px;}

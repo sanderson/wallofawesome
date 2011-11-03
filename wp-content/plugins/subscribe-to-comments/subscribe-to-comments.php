@@ -82,9 +82,9 @@ if ( !$sg_subscribe->current_viewer_subscription_status() ) :
 	<input type="hidden" name="ref" value="<?php echo urlencode('http://' . $_SERVER['HTTP_HOST'] . attribute_escape($_SERVER['REQUEST_URI'])); ?>" />
 
 	<p class="solo-subscribe-to-comments">
-	<?php _e('Subscribe without commenting:', 'subscribe-to-comments'); ?>
+	<?php _e('Enter your Email Address to subscribe without commenting:', 'subscribe-to-comments'); ?>
 	<span class="no-comment-subscribe">
-	<label for="solo-subscribe-email"><?php _e('E-Mail ', 'subscribe-to-comments'); ?>
+	<label for="solo-subscribe-email"><?php _e('', 'subscribe-to-comments'); ?>
 	<input type="text" name="email" id="solo-subscribe-email" size="22" value="<?php echo $user_email; ?>" /></label>
 	<input type="submit" name="submit" value="<?php _e('Subscribe', 'subscribe-to-comments'); ?>" />
 	</span>
