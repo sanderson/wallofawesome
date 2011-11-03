@@ -76,11 +76,14 @@ if ( !$sg_subscribe->current_viewer_subscription_status() ) :
 <?php /* This is the text that is displayed for users who are NOT subscribed */ ?>
 <?php /* ------------------------------------------------------------------- */ ?>
 
+	<div class="subscribe-divide"></div>
+	
 	<form action="" method="post">
 	<input type="hidden" name="solo-comment-subscribe" value="solo-comment-subscribe" />
 	<input type="hidden" name="postid" value="<?php echo (int) $id; ?>" />
 	<input type="hidden" name="ref" value="<?php echo urlencode('http://' . $_SERVER['HTTP_HOST'] . attribute_escape($_SERVER['REQUEST_URI'])); ?>" />
 
+	
 	<p class="solo-subscribe-to-comments">
 	<?php _e('Enter your Email Address to subscribe without commenting:', 'subscribe-to-comments'); ?>
 	<span class="no-comment-subscribe">

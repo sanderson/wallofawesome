@@ -199,6 +199,8 @@ $(document).ready(function() {
 
 <?php echo getFavicon() ?>
 
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

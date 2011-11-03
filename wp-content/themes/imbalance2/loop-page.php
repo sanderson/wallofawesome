@@ -21,7 +21,7 @@
 
 							<div id="fb-root"></div>
 							<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-							<fb:like href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>" send="true" width="450" show_faces="false" font=""></fb:like>
+							<fb:like href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>" send="true" data-layout="button_count" width="450" show_faces="false" font=""></fb:like>
 						</div>
 
 					</div><!-- .entry-content -->
