@@ -121,3 +121,11 @@ input[type="text"], textarea { background: #fff; border: 1px solid #ccc; padding
 #footer-left { float: right; width: 210px; padding-right: 40px; }
 #footer-right { float: right; width: 210px; }
 #infscr-loading { background: none repeat scroll 0 0 #000000; bottom: 40px; color: #FFFFFF; height: 100px; left: 40%; opacity: 0.8; padding: 10px; position: fixed; width: 200px; z-index: 5000; border-radius: 10px; }
+
+
+/* Subscribe to Comments */
+#subscription								{width: 600px !important; padding: 50px 0; margin:0 auto}
+#subscription h2						{font-family: Museo; font-size: 24px; color:#424242}
+fieldset										{border: none; padding:5px 0;}
+fieldset legend							{font-size: 16px; font-weight: bold;}
+#subscription .options						{margin-top: 35px;}
