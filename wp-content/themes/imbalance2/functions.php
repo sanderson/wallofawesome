@@ -32,11 +32,11 @@ add_shortcode( 'aside', 'imbalance2_aside' );
 if ( function_exists( 'add_theme_support' ) )
 {
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 210 );
+	set_post_thumbnail_size( 280 );
 }
 if ( function_exists( 'add_image_size' ) )
 {
-	add_image_size( 'homepage-thumb', 210 );
+	add_image_size( 'homepage-thumb', 280 );
 }
 
 // font output for css
