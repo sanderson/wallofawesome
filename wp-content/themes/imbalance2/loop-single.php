@@ -71,15 +71,6 @@
 								<?php imbalance2_tags() ?>
 								<?php edit_post_link( __( 'Edit', 'imbalance2' ), '<span class="edit-link">', '</span>' ); ?>
 							</div><!-- .entry-utility -->
-
-							<div id="social">
-								<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
-								<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
-								<div id="fb-root"></div>
-								<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-								<fb:like href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>" data-layout="button_count" send="true" width="100" show_faces="false" font=""></fb:like>
-							</div>
 						</td>
 					</tr>
 				</table><!-- #post-## -->
