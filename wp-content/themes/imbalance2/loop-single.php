@@ -22,8 +22,6 @@
 					</div><!-- #nav-above -->
 
 					<div class="entry-meta">
-						<?php imbalance2_posted_by() ?>
-						<span class="main_separator">/</span>
 						<?php imbalance2_posted_on() ?>
 						<span class="main_separator">/</span>
 						<?php imbalance2_posted_in() ?>
