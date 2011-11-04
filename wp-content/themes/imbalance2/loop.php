@@ -33,7 +33,8 @@
 				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('homepage-thumb', array('alt' => '', 'title' => '')) ?></a>
 	<?php endif ?>
 					<div class="categories"><?php imbalance2_posted_in(); ?></div>
-					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<!-- <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1> -->
+					<h1><a target="_blank" href="<?php meta('article_link'); ?>"><?php the_title(); ?></a></h1>
 		<?php the_excerpt() ?>
 					<div class="posted"><?php imbalance2_posted_on() ?> <!-- <span class="main_separator">/</span> -->
 					<?php echo comments_popup_link( __( 'Add a Comment <span>0</span>', 'imbalance2' ), __( 'Add a Comment <span>1</span>', 'imbalance2' ), __( 'Add a Comment <span>%</span>', 'imbalance2' ) ); ?>
