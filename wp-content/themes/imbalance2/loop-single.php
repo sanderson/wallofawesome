@@ -1,6 +1,7 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<div class="post_title">
+					<!-- <h1 class="entry-title"><?php the_title(); ?></h1> -->
 					<h1 class="entry-title"><a target="_blank" href="<?php meta('article_link'); ?>"><?php the_title(); ?></a></h1>
 
 					<div id="nav-above" class="navigation">
@@ -114,11 +115,12 @@
 	<?php endif ?>
 				<div class="abs">
 	<?php if ($imbalance2_theme_options['images_only'] == 0): ?>
-				<a target="_blank" href="<?php meta('article_link'); ?>"><?php the_post_thumbnail('homepage-thumb', array('alt' => '', 'title' => '')) ?></a>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('homepage-thumb', array('alt' => '', 'title' => '')) ?></a>
+				<!-- <a target="_blank" href="<?php meta('article_link'); ?>"><?php the_post_thumbnail('homepage-thumb', array('alt' => '', 'title' => '')) ?></a> -->
 	<?php endif ?>
 					<div class="categories"><?php imbalance2_posted_in(); ?></div>
-					<!-- <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1> -->
-					<h1><a target="_blank" href="<?php meta('article_link'); ?>"><?php the_title(); ?></a></h1>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<!-- <h1><a target="_blank" href="<?php meta('article_link'); ?>"><?php the_title(); ?></a></h1> -->
 		<?php the_excerpt() ?>
 					<div class="posted"><?php imbalance2_posted_on() ?> <span class="main_separator">/</span>
 					<?php echo comments_popup_link( __( 'No comments', 'imbalance2' ), __( 'One Comment', 'imbalance2' ), __( '% Comments', 'imbalance2' ) ); ?>
