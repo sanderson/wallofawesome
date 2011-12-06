@@ -7,7 +7,7 @@
 	wp_title( '|', true, 'right' );
 	bloginfo( 'name' );
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description";
+	if ( $site_description && ( is_home() | is_front_page() ) ) echo " | $site_description";
 	if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'imbalance2' ), max( $paged, $page ) );
 ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -199,8 +199,6 @@ $(document).ready(function() {
 
 <?php echo getFavicon() ?>
 
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -214,6 +212,9 @@ $(document).ready(function() {
   })();
 
 </script>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -239,25 +240,25 @@ $(document).ready(function() {
 			<div class="twitter">
 				<div class="hide">
 					<div class="buttons">
-						<a href="https://twitter.com/PagodaBox" class="twitter-follow-button" data-width="65px" data-show-count="false">Follow @PagodaBox</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script> 
-						<a href="https://twitter.com/share" class="twitter-share-button" data-url="www.pagodabox.com" data-count="horizontal" data-via="PagodaBox">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+						<a href="https://twitter.com/PagodaBox_WoA" class="twitter-follow-button" data-width="65px" data-show-count="false">Follow @PagodaBox</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script> 
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="wallofawesome.pagodabox.com" data-count="horizontal" data-via="PagodaBox_WoA">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 					</div>
 				</div>
-				<a target="_blank" href="http://www.twitter.com/pagodabox" class="sprite"></a>
+				<a target="_blank" href="http://www.twitter.com/pagodabox_woa" class="sprite"></a>
 			</div>
 			
 			<div class="facebook">
 				<div class="hide">
-					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="www.boxfile.pagodabox.com" send="false" layout="button_count" width="50" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="wallofawesome.pagodabox.com" send="false" layout="button_count" width="50" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
 				</div>
-				<a target="_blank" href="http://www.facebook.com/pagodabox" class="sprite"></a>
+				<a class="sprite"></a>
 			</div>
 			
 			<div class="google">
 				<div class="hide">
-					<g:plusone size="medium" href="www.pagodabox.com"></g:plusone>
+					<g:plusone size="medium" href="wallofawesome.pagodabox.com"></g:plusone>
 				</div>
-				<a target="_blank" href="https://plus.google.com/109162510841773581781" class="sprite"></a>
+				<a class="sprite"></a>
 			</div>
 			
 			<div class="rss">
@@ -286,13 +287,6 @@ $(document).ready(function() {
 									  		  $(".google .hide").hide();
 									  		});
 			});
-			
-	  	// GOOGLE PLUSONE
-	  	(function() {
-	  	  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-	  	  po.src = 'https://apis.google.com/js/plusone.js';
-	  	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	  	})();
 		</script>
 		
 		<div id="search">
