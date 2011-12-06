@@ -249,7 +249,7 @@ $(document).ready(function() {
 			
 			<div class="facebook">
 				<div class="hide">
-					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="wallofawesome.pagodabox.com" send="false" layout="button_count" width="50" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="wallofawesome.pagodabox.com" send="false" layout="button_count" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
 				</div>
 				<a class="sprite"></a>
 			</div>
