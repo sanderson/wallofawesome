@@ -33,6 +33,24 @@ blockquote { border-left-width: 3px; border-left-style: solid; margin-left: 7px;
 .submit-awesome {margin:0; padding:0 12px; cursor:pointer; height:25px; color:#707070; font-size:12px; line-height:25px; position:absolute; top:20px; right:0; -moz-border-radius:5px; border-radius:5px; background-image: linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -o-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -moz-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -webkit-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%); background-image: -ms-linear-gradient(bottom, rgb(225,225,225) 0%, rgb(244,244,244) 100%);}
 .submit-awesome:hover {color:#fff; text-decoration:none; background-image: linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -o-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -moz-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -webkit-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%); background-image: -ms-linear-gradient(bottom, rgb(244,0,85) 0%, rgb(211,0,53) 100%);}
 .awesome {width:594px; height:52px; display:block; position:absolute; top:123px; right:488px;}
+
+.social-links                        {margin:0; padding:0; height:20px; background:transparent; position:absolute; top:60px; right:0px;}
+.social-links .hide                  {padding:0 0 0 ; float:left; display:none;}
+.social-links .twitter               {margin:0; padding:0; width:auto; height:auto; float:left;}
+.social-links .twitter .buttons      {margin:0 0 0 -10px; width:180px;}
+.social-links .twitter .sprite       {margin:0; padding:0; width:20px; height:20px; display:block; background:url('images/sprite.png') -168px 0px no-repeat; float:left; cursor:pointer;}
+.social-links .twitter .sprite:hover {background-position:-168px -20px;}
+.twitter-share-button								 {float:none !important; margin:2px 0 0 0 !important;}
+.social-links .google                {margin:0; padding:0; width:auto; height:auto; float:left;}
+.social-links .google .sprite        {margin:0; padding:0; width:20px; height:20px; display:block; background:url('images/sprite.png') -208px 0px no-repeat; float:left; cursor:pointer;}
+.social-links .google .sprite:hover	 {background-position:-208px -20px;}
+.social-links .facebook              {margin:0; padding:0; width:auto; height:auto; float:left;}
+.social-links .facebook .sprite      {margin:0; padding:0; width:20px; height:20px; display:block; background:url('images/sprite.png') -188px 0px no-repeat; float:left; cursor:pointer;}
+.social-links .facebook .sprite:hover{background-position:-188px -20px;}
+.social-links .rss                   {margin:0; padding:0; width:auto; height:auto; float:left;}
+.social-links .rss .sprite           {margin:0; padding:0; width:20px; height:20px; display:block; background:url('images/sprite.png') -228px 0px no-repeat; float:left; cursor:pointer;}
+.social-links .rss .sprite:hover		 {background-position:-228px -20px;}
+
 #search { position:absolute; bottom:10px; right:0; width: 220px; }
 #header-right { margin: 20px 0 0 10px; display:none; }
 #search label, #search input[type=submit] { display: none; }

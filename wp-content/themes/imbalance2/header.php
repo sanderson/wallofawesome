@@ -229,6 +229,72 @@ $(document).ready(function() {
 "<n uers=\"znvygb:njrfbzr\100cntbqnobk\056pbz?fhowrpg=V guvax guvf vf njrfbzr&obql=Vapyhqr lbhe anzr, gur yvax naq jul lbh guvax vg'f njrfbzr\056\" pynff=\"fhozvg-njrfbzr\">Fhozvg Fbzr Njrfbzrarff<\057n>".replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
 </script>
 		<a href="<?php echo home_url( '/' ); ?>" class="awesome"></a>
+		<a href="" class="twitter"></a>
+		<a href="" class="facebook"></a>
+		<a href="" class="google-plus"></a>
+		<a href="" class="rss"></a>
+		
+		<div class="social-links">
+			
+			<div class="twitter">
+				<div class="hide">
+					<div class="buttons">
+						<a href="https://twitter.com/PagodaBox" class="twitter-follow-button" data-width="65px" data-show-count="false">Follow @PagodaBox</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script> 
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="www.pagodabox.com" data-count="horizontal" data-via="PagodaBox">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+					</div>
+				</div>
+				<a target="_blank" href="http://www.twitter.com/pagodabox" class="sprite"></a>
+			</div>
+			
+			<div class="facebook">
+				<div class="hide">
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="www.boxfile.pagodabox.com" send="false" layout="button_count" width="50" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
+				</div>
+				<a target="_blank" href="http://www.facebook.com/pagodabox" class="sprite"></a>
+			</div>
+			
+			<div class="google">
+				<div class="hide">
+					<g:plusone size="medium" href="www.pagodabox.com"></g:plusone>
+				</div>
+				<a target="_blank" href="https://plus.google.com/109162510841773581781" class="sprite"></a>
+			</div>
+			
+			<div class="rss">
+				<a target="_blank" href="https://wallofawesome.pagodabox.com/feed" class="sprite"></a>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".facebook").mouseenter(function(){
+									  		  $(".facebook .hide").show(250);
+									  		}).mouseleave(function(){
+									  		  $(".facebook .hide").hide();
+									  		});
+								    		
+									  		$(".twitter").mouseenter(function(){
+									  		  $(".twitter .hide").show(250);
+									  		}).mouseleave(function(){
+									  		  $(".twitter .hide").hide();
+									  		});
+								    		
+									  		$(".google").mouseenter(function(){
+									  		  $(".google .hide").show(250);
+									  		}).mouseleave(function(){
+									  		  $(".google .hide").hide();
+									  		});
+			});
+			
+	  	// GOOGLE PLUSONE
+	  	(function() {
+	  	  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	  	  po.src = 'https://apis.google.com/js/plusone.js';
+	  	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	  	})();
+		</script>
+		
 		<div id="search">
 			<?php get_search_form(); ?>
 			<div id="header-right"><?php wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'header-right', 'walker' => new Imbalance2_Walker_Nav_Menu(), 'depth' => 1 ) ); ?></div>
