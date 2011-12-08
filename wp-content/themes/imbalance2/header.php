@@ -3,13 +3,26 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title><?php
+	/*
+	 * Print the <title> tag based on what is being viewed.
+	 */
 	global $page, $paged;
-	wp_title( '|', true, 'right' );
-	bloginfo( 'name' );
+
+	wp_title( '' );
+
+	// Add the blog name.
+	// bloginfo( 'name' ); 
+
+	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() | is_front_page() ) ) echo " | $site_description";
-	if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'imbalance2' ), max( $paged, $page ) );
-?></title>
+			if ( $site_description && ( is_home() || is_front_page() ) )
+				echo " | $site_description";
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+
+	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -256,7 +269,7 @@ $(document).ready(function() {
 			
 			<div class="facebook">
 				<div class="hide">
-					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="wallofawesome.pagodabox.com" send="false" layout="button_count" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=242594485759677&amp;xfbml=1"></script><fb:like href="http://wallofawesome.pagodabox.com" send="false" layout="button_count" show_faces="false" colorscheme="light" action="like" font=""></fb:like>
 				</div>
 				<a class="sprite"></a>
 			</div>
