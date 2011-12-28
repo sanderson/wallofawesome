@@ -1202,12 +1202,12 @@ class DD_Delicious extends BaseDD{
 		$deliciousStats = json_decode(file_get_contents('http://feeds.delicious.com/v2/json/urlinfo/data?url='.$shareUrl));
 		
 		if(!empty($deliciousStats)){
-			if($deliciousStats[0]->total_posts == 0) {
+			if($deliciousStats->total_posts == 0) {
 			    $count = '0';
-			} elseif($deliciousStats[0]->total_posts == 1) {
+			} elseif($deliciousStats->total_posts == 1) {
 			    $count = '1';
 			} else {
-			    $count = $deliciousStats[0]->total_posts;
+			    $count = $deliciousStats->total_posts;
 			}
 		}else{
 			$count = '0';

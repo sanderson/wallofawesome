@@ -4,8 +4,8 @@ Donate link: http://www.diggdigg2u.com/
 Tags: digg digg, digg, google, google+1, linkedin, reddit, dzone, yahoo buzz, tweetMeme, twitter, topsy, facebook share, facebook like, stumbleUpon, delicious, designbump, thewebblend, blogengage and serpd.
 
 Requires at least: 2.3
-Tested up to: 3.1
-Stable tag: 4.5.3.3
+Tested up to: 3.3
+Stable tag: 4.5.3.4
 
 All-in-One Social Vote Buttons.
 
@@ -46,6 +46,9 @@ Refer User Guide and FAQ Here, <a href="http://www.diggdigg2u.com/user-guide/" t
 6. Buttons + Before Content + Compact Mode + Excerpt Mode
 
 == Changelog ==
+
+= Digg Digg v4.5.3.4 - 16/12/2011 =
+* Fixed : Fatal error: Cannot use object of type stdClass as array in dd-class.php 1205, happend when normal delicious button is selected.
 
 = Digg Digg v4.5.3.3 - 28/06/2011 =
 * Fixed : Warning in dd-printform.php
