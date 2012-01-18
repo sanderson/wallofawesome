@@ -194,7 +194,7 @@ add_filter( 'excerpt_length', 'imbalance2_excerpt_length' );
  * @return string An ellipsis
  */
 function imbalance2_auto_excerpt_more( $more ) {
-	return '';
+	return '...';
 }
 add_filter( 'excerpt_more', 'imbalance2_auto_excerpt_more' );
 
