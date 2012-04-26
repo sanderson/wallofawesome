@@ -1,16 +1,22 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 4.5.3.4
- Plugin URI: http://www.mkyong.com/blog/digg-digg-wordpress-plugin
- Author: Yong Mook Kim
- Author URI: http://www.mkyong.com/
- Description: All-in-One social buttons [<a href="admin.php?page=dd_page_for_normal_display">Digg Digg Configuration</a>]
- */
+ Version: 5.2.6
+ Plugin URI: http://bufferapp.com/diggdigg
+ Author: Buffer
+ Author URI: http://bufferapp.com/
+ Description: Add a floating bar with share buttons to your blog. Just like Mashable!
+              Help your posts get more shares, help yourself get more traffic.
+              Simply Activate Digg Digg now to enhance your posts.
+*/
+
 /*
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 */
+
+// fix for the W3 Total Cache bug (fixed in Digg Digg 5.1)
+if(function_exists('w3tc_objectcache_flush')) w3tc_objectcache_flush();
 
 require_once 'include/dd-global-variable.php';
 require_once 'include/dd-printform.php';
@@ -27,8 +33,8 @@ add_action('wp_head', 'dd_output_css_to_html');
 add_action('wp_head', 'dd_get_thumbnails_for_fb');
 add_filter('the_excerpt', 'dd_hook_wp_content');
 add_filter('the_content', 'dd_hook_wp_content');
-function dd_hook_wp_content($content = ''){
 
+function dd_hook_wp_content($content = ''){
 	if(dd_isThisPageExcluded($content)==true){
 		return $content;
 	}
@@ -39,7 +45,7 @@ function dd_hook_wp_content($content = ''){
 	$postlink = get_permalink($id); //get post link
 	$commentcount = $post->comment_count; //get post comment count
 	$title = trim($post->post_title); // get post title
-	$link = split(DD_DASH,$postlink); //split the link with '#', for comment link
+	$link = explode(DD_DASH,$postlink); //split the link with '#', for comment link 
 	$url = $link[0];
 
 	$dd_global_config = get_option(DD_GLOBAL_CONFIG);
@@ -81,7 +87,6 @@ function isNormalButtonAllowDisplay($ddNormalDisplay){
 }
 
 function getNormalButtonLineUpOption($ddNormalDisplay){
-	
 	//horizontal or vertical
 	return $ddNormalDisplay[DD_LINE_UP_OPTION][DD_LINE_UP_OPTION_SELECT]; 
 	
@@ -233,7 +238,10 @@ function process_floating_button_display($ddFloatDisplay, $content, $url, $title
 function isFloatingButtonAllowDisplay($ddFloatDisplay){
 
 	if($ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY]==DD_DISPLAY_ON){
-		if(dd_IsDisplayAllow($ddFloatDisplay)){
+		if(is_home()){
+			return false;
+		}
+		elseif(dd_IsDisplayAllow($ddFloatDisplay)){
 			return true;
 		}
 	}
@@ -288,7 +296,9 @@ function constructFloatingButtons($url, $title, $id, $commentcount, $dd_global_c
 }
 
 function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$content,$ddFloatDisplay){
-
+	
+	global $dd_floating_bar;
+	
 	$floatButtonsContainer=DD_EMPTY_VALUE;
 	$dd_lazyLoad_jQuery_script =DD_EMPTY_VALUE;
 	$dd_lazyLoad_scheduler_script =DD_EMPTY_VALUE;
@@ -306,15 +316,13 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
 
-		$floatButtonsContainer .= "<div class='dd_button_v'>" . $finalURL . "</div><div style='clear:left'></div>" ;
+		$floatButtonsContainer .= "<div class='dd_button_v " . $obj->dd_twitter_ajax_left_float . "'>" . $finalURL . "</div><div style='clear:left'></div>";
 
 	}
 
 	if($floatButtonsContainer != DD_EMPTY_VALUE){
 
 		$floatButtonsContainer = dd_construct_final_floating_buttons($floatButtonsContainer, $ddFloatDisplay);
-		
-		$browserWidthCheckingJS = dd_get_browser_width_checking_script($ddFloatDisplay[DD_EXTRA_OPTION][DD_EXTRA_OPTION_SCREEN_WIDTH]);
 
 		if($dd_lazyLoad_jQuery_script!=DD_EMPTY_VALUE){
 			$dd_lazyLoad_jQuery_script = "<script type=\"text/javascript\">" . $dd_lazyLoad_jQuery_script . "</script>";
@@ -324,10 +332,20 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_scheduler_script = "<script type=\"text/javascript\"> jQuery(document).ready(function($) { " . $dd_lazyLoad_scheduler_script . " }); </script>";
 		}
 		
-		$floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
-		$floatingJS = '<script type="text/javascript">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_SCROLLING_POSITION] . '</script>';
+		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
+		$floatingJSOptions = '<script type="text/javascript">var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE).'; var dd_top_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE).';</script>';
+		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
-		$content =  $floatButtonsContainer . "<div class='dd_content_wrap'>" . $content . "</div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		$dd_start_anchor = '<a id="dd_start"></a>';
+		
+		if(!$ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS]){
+			$dd_end_anchor = '<a id="dd_end"></a>';
+		} else {
+			$dd_end_anchor = '';
+		}
+		
+		$content =  $dd_start_anchor . $content . $dd_end_anchor . $dd_floating_bar;
 	
 	}
 
@@ -337,6 +355,8 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 
 function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_for_display,$content,$ddFloatDisplay){
 
+	global $dd_floating_bar;
+	
 	$floatButtonsContainer=DD_EMPTY_VALUE;
 	$dd_lazyLoad_jQuery_script =DD_EMPTY_VALUE;
 	$dd_lazyLoad_scheduler_script =DD_EMPTY_VALUE;
@@ -354,15 +374,13 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
 
-		$floatButtonsContainer .= "<div class='dd_button_v'>" . $finalURL . "</div><div style='clear:left'></div>" ;
+		$floatButtonsContainer .= "<div class='dd_button_v " . $obj->dd_twitter_ajax_left_float . "'>" . $finalURL . "</div><div style='clear:left'></div>";
 
 	}
 
 	if($floatButtonsContainer != DD_EMPTY_VALUE){
 
 		$floatButtonsContainer = dd_construct_final_floating_buttons($floatButtonsContainer, $ddFloatDisplay);
-		
-		$browserWidthCheckingJS = dd_get_browser_width_checking_script($ddFloatDisplay[DD_EXTRA_OPTION][DD_EXTRA_OPTION_SCREEN_WIDTH]);
 
 		if($dd_lazyLoad_jQuery_script!=DD_EMPTY_VALUE){
 			$dd_lazyLoad_jQuery_script = "<script type=\"text/javascript\">" . $dd_lazyLoad_jQuery_script . "</script>";
@@ -372,10 +390,14 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 			$dd_lazyLoad_scheduler_script = "<script type=\"text/javascript\">function dd_float_scheduler(){ jQuery(document).ready(function($) { " . $dd_lazyLoad_scheduler_script . " }); }</script>";
 		}
 		
-		$floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
-		$floatingJS = '<script type="text/javascript">function dd_float_final(){' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_SCROLLING_POSITION] . '}</script>';
-
-		$content =  $floatButtonsContainer . "<div class='dd_content_wrap'>" . $content . "</div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
+		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
+		$floatingJSOptions = '<script type="text/javascript">var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE).';</script>';
+		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
+		
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		
+		$dd_anchor = '<a id="dd_start"></a>';
+		$content =  $dd_anchor . $content . $dd_floating_bar;
 	
 	}
 
@@ -412,9 +434,9 @@ function dd_construct_final_floating_buttons($floatButtonsContainer, $ddFloatDis
 //http://help.sharethis.com/customization/chicklets
 function dd_get_email_service($ddShareThisPubId){
 	
-	$emailButton = "<div class='dd_button_extra_v'><script type=\"text/javascript\">stLight.options({";
+	$emailButton = "<div class='dd_button_extra_v'><script type=\"text/javascript\">jQuery(document).load(function(){ stLight.options({";
 	$emailButton .= "publisher:'". $ddShareThisPubId ."'";
-	$emailButton .= "});</script><div class=\"st_email_custom\"><span id='dd_email_text'>email</span></div></div><div style='clear:left'></div>";
+	$emailButton .= "}); });</script><div class=\"st_email_custom\"><span id='dd_email_text'>email</span></div></div><div style='clear:left'></div>";
 
 	return $emailButton;
 	
@@ -437,67 +459,6 @@ function dd_is_credit_link_enabled($creditLinkStatus){
 	
 }
 
-function dd_get_browser_width_checking_script($browserMininumWidth){
-	
-	if(trim($browserMininumWidth)==''){
-		$browserMininumWidth = 0;
-	}
-
-	$browserWidthCheckingJs = "<script type=\"text/javascript\"> jQuery(document).ready(function($) {
-	
-		if($(window).width()> " . $browserMininumWidth . "){ 
-			$('#dd_ajax_float').show()
-		}else{
-			$('#dd_ajax_float').hide()
-		}
-
-		$(window).resize(function() { 
-			
-			if($(window).width()> " . $browserMininumWidth . "){ 
-				$('#dd_ajax_float').show()
-			}else{
-				$('#dd_ajax_float').hide()
-			}
-			
-		});  
-
-	}); ;</script>";
-		
-	return $browserWidthCheckingJs;
-	
-}
-
-
-function dd_get_browser_width_checking_script_footerload($browserMininumWidth){
-	
-	if(trim($browserMininumWidth)==''){
-		$browserMininumWidth = 0;
-	}
-
-	$browserWidthCheckingJs = "<script type=\"text/javascript\">function dd_float_check_browser(){ jQuery(document).ready(function($) {
-	
-		if($(window).width()> " . $browserMininumWidth . "){ 
-			$('#dd_ajax_float').show()
-		}else{
-			$('#dd_ajax_float').hide()
-		}
-
-		$(window).resize(function() { 
-			
-			if($(window).width()> " . $browserMininumWidth . "){ 
-				$('#dd_ajax_float').show()
-			}else{
-				$('#dd_ajax_float').hide()
-			}
-			
-		});  
-
-	}); };</script>";
-		
-	return $browserWidthCheckingJs;
-	
-}
-
 /********************************************************
  * Digg Digg Admin Page (Start)
  *******/
@@ -508,10 +469,10 @@ function dd_admin_generate_menu_link() {
 	
 	$page = add_menu_page('Digg Digg', 'Digg Digg', 'manage_options', 'dd_button_setup');
 	
-	$dd_button_global_setup = add_submenu_page('dd_button_setup', 'Digg Digg --> Global Configuration', 'Global Config', 'manage_options', 'dd_button_setup', 'dd_button_global_setup');
-	$dd_page_for_normal_display = add_submenu_page('dd_button_setup', 'Digg Digg --> Normal Button Configuration ', 'Normal Display', 'manage_options', 'dd_page_for_normal_display', 'dd_page_for_normal_display');
-	$dd_page_for_floating_display = add_submenu_page('dd_button_setup', 'Digg Digg --> Floating Button Configuration', 'Floating Display', 'manage_options', 'dd_page_for_floating_display', 'dd_page_for_floating_display');
-	$dd_button_manual_setup = add_submenu_page('dd_button_setup', 'Digg Digg --> Manual Placement', 'Manual Placement', 'manage_options', 'dd_button_manual_setup', 'dd_button_manual_setup');
+	$dd_button_global_setup = add_submenu_page('dd_button_setup', 'Digg Digg - Global Configuration', 'Global Config', 'manage_options', 'dd_button_setup', 'dd_button_global_setup');
+	$dd_page_for_normal_display = add_submenu_page('dd_button_setup', 'Digg Digg - Normal Button Configuration ', 'Normal Display', 'manage_options', 'dd_page_for_normal_display', 'dd_page_for_normal_display');
+	$dd_page_for_floating_display = add_submenu_page('dd_button_setup', 'Digg Digg - Floating Button Configuration', 'Floating Display', 'manage_options', 'dd_page_for_floating_display', 'dd_page_for_floating_display');
+	$dd_button_manual_setup = add_submenu_page('dd_button_setup', 'Digg Digg - Manual Placement', 'Manual Placement', 'manage_options', 'dd_button_manual_setup', 'dd_button_manual_setup');
 
 	//puts admin css in digg digg admin page only
 	add_action('admin_print_styles-' .$dd_button_global_setup, 'dd_admin_output_admin_css');
@@ -527,7 +488,8 @@ function dd_admin_init_setting() {
 }
 
 //$dd_current_version = 2;
-$dd_current_version = 3;
+//$dd_current_version = 3;
+$dd_current_version = 5;
 function dd_check_if_client_need_upgrade_setting() {
 
 	global $dd_current_version;
@@ -550,7 +512,7 @@ function dd_check_if_client_need_upgrade_setting() {
 		if($dd_current_version > $dd_client_version){
 			
 			//print_r('<h1>setting is upgrading.....</h1>');
-			dd_upgrade_setting_version_3();
+			dd_upgrade_setting_version_5();
 			update_option('dd_client_version', $dd_current_version);
 			
 		}else{

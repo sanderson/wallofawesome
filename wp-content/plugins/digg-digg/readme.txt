@@ -1,51 +1,116 @@
-=== Plugin Name ===
-Contributors: YONG MOOK KIM
-Donate link: http://www.diggdigg2u.com/
-Tags: digg digg, digg, google, google+1, linkedin, reddit, dzone, yahoo buzz, tweetMeme, twitter, topsy, facebook share, facebook like, stumbleUpon, delicious, designbump, thewebblend, blogengage and serpd.
-
+=== Digg Digg ===
+Contributors: joelg87, flipstorm
+Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
-Tested up to: 3.3
-Stable tag: 4.5.3.4
+Tested up to: 3.3.1
+Stable tag: 5.2.6
 
-All-in-One Social Vote Buttons.
+Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
 == Description ==
-Integrate popular social buttons into Wordpress easily.
+With Digg Digg by Buffer, you have an all in one social sharing plugin for your blog. Display all social sharing buttons nicely on your blog and make it look amazing, just like Mashable.
 
 = Features =
 
-* Display counts for popular social butons like Digg, LinkedIn, Google +1, Reddit, dDone, Twitter, TweetMeme, Topsy, Yahoo Buzz, facebook share, facebook like, StumbleUpon, Delicious, Sphinn, Google Buzz, Designbump, WebBlend, BlogEngage and Serpd.
-* Facebook Like (Iframe or XFBXM), support thumbnail generation, multiple languages, show faces and send button.
-* Rich button layout customisation.
-* Flexible button display controls.
+* Display all popular social sharing buttons with count, such as Twitter, Buffer, Facebook Share, Facebook Like, Digg, LinkedIn, Google +1, Reddit, dZone, TweetMeme, Topsy, Yahoo Buzz, StumbleUpon, Del.icio.us, Sphinn, Designbump, WebBlend, BlogEngage and Serpd, Pinterest.
+* Facebook Like (Iframe or XFBML), support thumbnail generation, multiple languages, show faces and send button.
+* Great customization options. Choose a floating bar like here: http://blog.bufferapp.com or sharing buttons at the top or bottom of the post.
 * Lazy loading to increase website performance.
 * Left or right scrolling effect like Mashable.com.
 * Support in excerpt mode.
 * Support for email and print services.
-* And many many ......
+* Nearly any button out there you can think of.
+* Have any suggestions we should include in the next update? Email us: diggdigg@bufferapp.com
 
 == Installation ==
 
-1. Download and extract it
-2. Copy digg-digg folder to the "/wp-content/plugins/" directory
+1. Download the plugin from this page and extract it
+2. Copy the digg-digg folder to the "/wp-content/plugins/" directory 
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Done
+4. You are done – you can now customize it however you want by clicking on "Digg Digg" in the "settings" section.
 
 Post Installation
-1. Access the setting -> Digg Digg to do the configuration
+1. Go to the Digg Digg admin section to setup your social buttons
 
 == Frequently Asked Questions ==
-Refer User Guide and FAQ Here, <a href="http://www.diggdigg2u.com/user-guide/" target="_blank">http://www.diggdigg2u.com/user-guide/</a>
+If you have any questions, we'd love to hear from you. Email us: diggdigg@bufferapp.com
 
 == Screenshots ==
-1. Buttons + Before Content + Normal Mode
-2. Buttons + Before Content + Compact Mode
-3. Buttons + Right Float + Normal Mode + Vertical Mode
-4. Buttons + Left Scrolling Effect
-5. Buttons + Right Scrolling Effect
-6. Buttons + Before Content + Compact Mode + Excerpt Mode
+1. Floating Bar
+2. Normal Bar with Large Buttons at Top
+3. Normal Bar with Large Buttons at Bottom
+4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.2.6 - 24/04/2012 =
+* New: Option to allow Digg Digg to scroll beyond the end of a post, into the comments.
+* Fix: Bug where in some cases Digg Digg buttons in the floating bar were not clickable.
+* Fix: Bug where the Digg Digg floating bar positioning would be wrong if you scroll before the page is fully loaded.
+
+= Digg Digg v5.2.5 - 19/04/2012 =
+* Fixed: Digg Digg no longer forces an old version of jQuery. This should solve a number of different issues.
+* New: Choose the offset of the floating bar from the top of the page.
+* New: The floating bar stops at the comments, so it doesn't overlap.
+
+= Digg Digg v5.2.4 - 09/04/2012 =
+* Fixed: Bug where the floating bar would be in the wrong position (over content) and would not stay in place as you scroll. This was caused by a bug with the Email feature.
+* Fixed: Issue where the floating bar would not appear due to an incorrect calculation of where to place it.
+
+= Digg Digg v5.2.3 - 03/04/2012 =
+* Fixed: Issue where the floating bar was in the wrong position in some themes and Firefox and Internet Explorer, particularly related to pictures at the start of a post.
+* Fixed: The option to put the floating bar on the blog homepage has been removed. This is due to confusion and issues arising with this option. If you want buttons on your posts on the blog homepage, you should enable the Normal Display buttons for either just the homepage or for all. 
+
+= Digg Digg v5.2.2 - 03/04/2012 =
+* Fixed: Themes missing the wp_footer hook caused the floating bar to not display. Now using an alternative method.
+
+= Digg Digg v5.2.1 - 12/03/2012 =
+* Fixed: An alternate usage of jQuery caused floating bar to not work with certain themes.
+
+= Digg Digg v5.2 - 12/03/2012 =
+* Fixed: Problem on some themes where the floating bar only appeared when you scrolled partly down the page.
+* Fixed: Bug where the words "Buffer" and "Pin It" appeared in the excerpt.
+* Fixed: Width of the floating bar now adjusts to allow for larger buttons.
+* Fixed: Buttons in the floating bar have better vertical spacing.
+* New: Choose the offset of the floating bar from the left of the content.
+* New: The floating bar will automatically hide when it goes off the side of the page.
+
+= Digg Digg v5.1.2 - 07/03/2012 =
+* Fixed: Width of Tweet button is now set by Twitter, instead of fixed by Digg Digg. This allows Tweet buttons of languages other than English to display correctly, and fixes a bug where the count was hidden on the compact button.
+
+= Digg Digg v5.1.1 - 05/03/2012 =
+* Fixed: Inconsistencies with the scrolling behaviour of the floating bar amongst different themes. If the floating bar was acting odd for you, grab this update.
+
+= Digg Digg v5.1 - 01/03/2012 =
+* Critical Bug Fix: The horrible Fatal Error which resulted in the page stopping loading mid-way caused by conflict with W3 Total Cache. If you are using W3 Total Cache, you should definitely grab this update.
+
+= Digg Digg v5.0.5 - 29/02/2012 =
+* Fixed: Fatal error: Call to undefined function get_post_thumbnail_id() when using Pinterest button on themes which don't support featured images.
+
+= Digg Digg v5.0.4 - 28/02/2012 =
+* Fixed: Flattr button. You can choose your Flattr username from the global configuration page.
+* Fixed: You can now choose a Twitter username to be mentioned when people use the Buffer button. Set it in the global configuration page.
+* Fixed: Bug where "Buffer" and "Pin It" appeared at the start of excerpts.
+
+= Digg Digg v5.0.3 - 27/02/2012 =
+* Fixed: Pinterest button let's people pin the featured image for the blog post.
+* Fixed: The vertical Tweet button width has been set to 55px, to fix a current issue from Twitter.
+* Fixed: The floating bar shadow is now set using alpha transparency, to avoid a "glow" effect on dark backgrounds.
+
+= Digg Digg v5.0.2 - 08/02/2012 =
+* Fixed: Added back the ability to disable the credit link.
+
+= Digg Digg v5.0.1 - 08/02/2012 =
+* Fixed: Fatal error: "unexpected T_PAAMAYIM_NEKUDOTAYIM" error message when updating.
+* Fixed: Bug where you could no longer turn off the floating bar.
+
+= Digg Digg v5.0 - 08/02/2012 =
+* Welcome to Digg Digg by Buffer!
+* New: Brand new floating bar design.
+* Added: Pinterest button added.
+* Added: Buffer button added.
+* Added: Plugin now starts with a default set of buttons enabled in the floating bar.
+* Fixed: LinkedIn button.
 
 = Digg Digg v4.5.3.4 - 16/12/2011 =
 * Fixed : Fatal error: Cannot use object of type stdClass as array in dd-class.php 1205, happend when normal delicious button is selected.
@@ -402,4 +467,4 @@ Add Setup screen (Setting->DiggDigg) to let user choose where user want to displ
 * Append Digg Button with Left Float Content
 * Append Digg Button with Right Float Content
 * Append Digg Button Before Content
-* Append Digg Button After Content 
+* Append Digg Button After Content
